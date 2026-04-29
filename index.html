@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabyn Studio — Sites web pour commerçants locaux · Sautron, Nantes</title>
+<meta name="description" content="Gabyn Studio crée des sites web sur mesure pour les commerçants locaux de Sautron et Nantes. Livré en 7 jours. À partir de 490€. Devis gratuit sans engagement.">
+<meta name="keywords" content="création site web Sautron, site internet Nantes, web design Loire-Atlantique, site vitrine commerçant, Gabyn Studio">
+<meta name="author" content="Gabyn Studio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gabyn.studio/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gabyn Studio — Des sites qui travaillent pour vous">
+<meta property="og:description" content="Sites sur mesure pour les commerçants locaux. Livré en 7 jours. À partir de 490€.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabyn.studio/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Gabyn Studio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gabyn Studio — Des sites qui travaillent pour vous">
+<meta name="twitter:description" content="Sites sur mesure pour les commerçants locaux. Livré en 7 jours. À partir de 490€.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700;900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Gabyn Studio",
+  "description": "Studio web spécialisé dans la création de sites internet pour les commerçants locaux",
+  "url": "https://gabyn.studio",
+  "email": "contact@gabyn.studio",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sautron",
+    "addressRegion": "Pays de la Loire",
+    "postalCode": "44880",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.2671",
+    "longitude": "-1.6736"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "47.2671",
+      "longitude": "-1.6736"
+    },
+    "geoRadius": "50000"
+  },
+  "priceRange": "€€",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://instagram.com/gabyn.studio",
+    "https://linkedin.com/company/gabyn-studio"
+  ]
+}
+</script>
+
+<style>
+  /* ═══════════════════════════════════════
+     CSS CUSTOM PROPERTIES
+  ═══════════════════════════════════════ */
+  :root {
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface2: #1A1A1A;
+    --accent: #E8E8E8;
+    --cta: #FFFFFF;
+    --blue: #4F6BFF;
+    --text: #F5F5F5;
+    --muted: #666666;
+    --border: rgba(255,255,255,0.07);
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --ease-out: cubic-bezier(.16, 1, .3, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ═══════════════════════════════════════
+     RESET & BASE
+  ═══════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { cursor: none; font-family: inherit; border: none; background: none; }
+  img { display: block; max-width: 100%; }
+  ul { list-style: none; }
+
+  /* ═══════════════════════════════════════
+     CUSTOM CURSOR
+  ═══════════════════════════════════════ */
+  #cursor-dot {
+    width: 6px; height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+  }
+  #cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s var(--ease-out), width 0.3s var(--ease-out), height 0.3s var(--ease-out), border-color 0.3s;
+  }
+  body.cursor-hover #cursor-ring {
+    width: 64px; height: 64px;
+    border-color: rgba(79,107,255,0.5);
+  }
+  body.cursor-hover #cursor-dot { opacity: 0; }
+
+  @media (max-width: 768px) {
+    #cursor-dot, #cursor-ring { display: none; }
+    body { cursor: auto; }
+    button { cursor: pointer; }
+    a { cursor: pointer; }
+  }
+
+  /* ═══════════════════════════════════════
+     LOADER
+  ═══════════════════════════════════════ */
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .loader-logo {
+    opacity: 0;
+    transform: scale(0.85) translateY(12px);
+    transition: opacity 0.6s ease, transform 0.7s var(--ease-out);
+    width: clamp(160px, 20vw, 240px);
+  }
+  .loader-logo.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  .loader-line {
+    width: 0;
+    height: 1px;
+    background: var(--blue);
+    transition: width 0.6s var(--ease-out);
+  }
+  .loader-tagline {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(11px, 1.5vw, 13px);
+    letter-spacing: 0.35em;
+    color: var(--muted);
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* ═══════════════════════════════════════
+     GRAIN OVERLAY
+  ═══════════════════════════════════════ */
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.03;
+  }
+
+  /* ═══════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════ */
+  nav#nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s ease;
+  }
+  nav#nav.scrolled {
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+  }
+  .nav-logo { height: 44px; display: flex; align-items: center; }
+  .nav-logo img { height: 44px; width: auto; }
+  .nav-logo svg { height: 44px; width: auto; }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: var(--text);
+    transition: width 0.3s var(--ease-out);
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover {
+    background: var(--cta);
+    color: #000;
+    border-color: var(--cta);
+  }
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.3s var(--ease-out), opacity 0.3s;
+    transform-origin: center;
+  }
+  .burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* Mobile overlay */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .mobile-menu.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(32px, 8vw, 56px);
+    color: var(--text);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.4s var(--ease-out), opacity 0.4s ease, color 0.2s;
+  }
+  .mobile-menu.active a {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .mobile-menu.active a:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-menu.active a:nth-child(2) { transition-delay: 0.1s; }
+  .mobile-menu.active a:nth-child(3) { transition-delay: 0.15s; }
+  .mobile-menu.active a:nth-child(4) { transition-delay: 0.2s; }
+  .mobile-menu a:hover { color: var(--blue); }
+
+  @media (max-width: 768px) {
+    nav#nav { padding: 16px 20px; }
+    nav#nav.scrolled { padding: 12px 20px; }
+    .nav-links, .nav-cta { display: none; }
+    .burger { display: flex; }
+  }
+
+  /* ═══════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px 100px;
+    background: url('images/hero-bg.webp') center center / cover no-repeat;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.10) 100%),
+      linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 35%, rgba(10,10,10,0.80) 100%);
+    z-index: 0;
+  }
+  .hero-inner, .scroll-indicator { position: relative; z-index: 1; }
+  .hero-inner {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-left {
+    max-width: 680px;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s var(--ease-out);
+  }
+  .hero-tag.visible { opacity: 1; transform: translateY(0); }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5.8vw, 96px);
+    line-height: 1.0;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .hero-headline .line1 {
+    font-weight: 900;
+    color: var(--text);
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 0.7s var(--ease-out) 0.1s, opacity 0.5s ease 0.1s;
+  }
+  .hero-headline .line2 {
+    font-weight: 200;
+    font-style: italic;
+    color: var(--accent);
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 0.7s var(--ease-out) 0.2s, opacity 0.5s ease 0.2s;
+  }
+  .hero-headline .line3 {
+    font-weight: 900;
+    color: var(--blue);
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 0.7s var(--ease-out) 0.32s, opacity 0.5s ease 0.32s;
+  }
+  .hero-headline.visible .line1,
+  .hero-headline.visible .line2,
+  .hero-headline.visible .line3 { transform: translateY(0); opacity: 1; }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.45s, transform 0.6s var(--ease-out) 0.45s;
+  }
+  .hero-sub.visible { opacity: 1; transform: translateY(0); }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.55s, transform 0.6s var(--ease-out) 0.55s;
+  }
+  .hero-ctas.visible { opacity: 1; transform: translateY(0); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    background: var(--cta);
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 2px;
+    transition: background 0.25s, transform 0.25s var(--ease-out), box-shadow 0.25s;
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    transition: color 0.25s;
+  }
+  .btn-ghost:hover { color: var(--text); }
+  .btn-ghost .arrow {
+    transition: transform 0.25s var(--ease-out);
+  }
+  .btn-ghost:hover .arrow { transform: translateX(4px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.65s, transform 0.6s var(--ease-out) 0.65s;
+  }
+  .hero-stats.visible { opacity: 1; transform: translateY(0); }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text);
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .stat-sep {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+    align-self: center;
+  }
+
+  /* Hero devices — real photos */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease 0.4s, transform 0.8s var(--ease-out) 0.4s;
+  }
+  .hero-visual.visible { opacity: 1; transform: translateY(0); }
+  .devices-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-macbook-photo { display: none; }
+  .hero-iphone-photo {
+    position: relative;
+    width: 62%;
+    max-width: 300px;
+    border-radius: 28px;
+    display: block;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 0 60px rgba(255,255,255,0.04);
+    z-index: 3;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 36px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.6s ease 1s;
+  }
+  .scroll-indicator.visible { opacity: 1; }
+  .scroll-indicator span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+    .hero-visual { order: -1; justify-content: center; }
+    .devices-wrapper { max-width: 500px; margin: 0 auto; }
+  }
+  @media (max-width: 768px) {
+    #hero { padding: 100px 20px 80px; }
+    .hero-inner { gap: 40px; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .stat-sep { display: none; }
+    .devices-wrapper { max-width: 340px; }
+    .hero-iphone-photo { right: -14px; bottom: -14px; width: 36%; }
+  }
+
+  /* ═══════════════════════════════════════
+     HANDS BANNER
+  ═══════════════════════════════════════ */
+  .hands-banner {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+  }
+  .hands-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    filter: brightness(0.45);
+    transition: filter 0.6s ease, transform 0.8s var(--ease-out);
+  }
+  .hands-banner:hover img {
+    filter: brightness(0.55);
+    transform: scale(1.02);
+  }
+  .hands-banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .hands-quote {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 40px);
+    color: var(--text);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 760px;
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 768px) {
+    .hands-banner { height: 260px; }
+  }
+
+  /* ═══════════════════════════════════════
+     MARQUEE
+  ═══════════════════════════════════════ */
+  .marquee-strip {
+    background: var(--blue);
+    padding: 16px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-strip:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+    padding: 0 20px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+  .marquee-dot {
+    width: 4px; height: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════
+     SECTION COMMON
+  ═══════════════════════════════════════ */
+  section {
+    padding: 120px 40px;
+    position: relative;
+  }
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--blue);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 16px; height: 1px;
+    background: var(--blue);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 72px);
+    color: var(--text);
+    line-height: 1.05;
+    margin-bottom: 60px;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    section { padding: 80px 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     RÉALISATIONS
+  ═══════════════════════════════════════ */
+  #realisations { background: var(--surface); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .project-card {
+    background: var(--surface);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 440px;
+  }
+
+  /* Mini browser mockup per card */
+  .project-visual {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .project-visual-browser {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-visual-bar {
+    height: 24px;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .browser-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .browser-dot:nth-child(1) { background: rgba(255,95,86,0.7); }
+  .browser-dot:nth-child(2) { background: rgba(255,189,46,0.7); }
+  .browser-dot:nth-child(3) { background: rgba(39,201,63,0.7); }
+  .project-visual-screen {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  /* PÖLA — floral terracotta */
+  .visual-pola { background: linear-gradient(160deg, #2a1810 0%, #3d1f0f 40%, #1a0e08 100%); }
+  .visual-pola::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 30%, rgba(196,113,74,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 70%, rgba(180,90,50,0.2) 0%, transparent 60%);
+  }
+  .visual-pola::after {
+    content: '';
+    position: absolute;
+    bottom: 12px; left: 14px;
+    width: 55%; height: 6px;
+    background: rgba(196,113,74,0.6);
+    border-radius: 3px;
+    box-shadow: 0 10px 0 rgba(196,113,74,0.3), 0 20px 0 rgba(196,113,74,0.15);
+  }
+  /* Viva Line — editorial gold */
+  .visual-vivaline { background: linear-gradient(160deg, #0d0c0a 0%, #1a1610 50%, #0a0906 100%); }
+  .visual-vivaline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% 20%, rgba(201,169,110,0.18) 0%, transparent 70%),
+      linear-gradient(to bottom, transparent 50%, rgba(201,169,110,0.06) 100%);
+  }
+  .visual-vivaline::after {
+    content: '';
+    position: absolute;
+    top: 20px; left: 14px;
+    width: 45%; height: 10px;
+    background: rgba(201,169,110,0.5);
+    border-radius: 2px;
+    box-shadow: 0 16px 0 rgba(201,169,110,0.25), 0 28px 0 8px rgba(201,169,110,0.1);
+  }
+  /* Maison Rabel — boucherie rouge sombre */
+  .visual-rabel { background: linear-gradient(160deg, #100808 0%, #1e0d0d 45%, #0a0505 100%); }
+  .visual-rabel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 30% 40%, rgba(139,26,26,0.3) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 70% at 80% 70%, rgba(100,15,15,0.2) 0%, transparent 60%);
+  }
+  .visual-rabel::after {
+    content: '';
+    position: absolute;
+    bottom: 16px; left: 14px;
+    width: 50%; height: 7px;
+    background: rgba(180,40,40,0.5);
+    border-radius: 2px;
+    box-shadow: 0 12px 0 rgba(139,26,26,0.3);
+  }
+  /* Shared mock UI elements inside screens */
+  .mock-ui {
+    position: absolute;
+    inset: 0;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mock-ui-nav {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .mock-ui-logo { width: 36px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3); }
+  .mock-ui-links { display: flex; gap: 8px; }
+  .mock-ui-link { width: 18px; height: 2px; border-radius: 1px; background: rgba(255,255,255,0.15); }
+  .mock-ui-hero { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
+  .mock-ui-h1 { height: 7px; border-radius: 3px; background: rgba(255,255,255,0.45); }
+  .mock-ui-h2 { height: 5px; border-radius: 3px; background: rgba(255,255,255,0.2); width: 65%; }
+  .mock-ui-btn { width: 52px; height: 14px; border-radius: 2px; margin-top: 6px; }
+  .project-card:hover { transform: translateY(-6px); z-index: 2; background: var(--surface2); }
+  .project-body { padding: 28px 32px 32px; flex: 1; display: flex; flex-direction: column; }
+  .project-accent-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    transition: height 0.4s ease;
+  }
+  .project-card:hover .project-accent-line { height: 3px; }
+  .project-num {
+    position: absolute;
+    top: 20px; right: 24px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 80px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    user-select: none;
+    transition: color 0.4s ease;
+  }
+  .project-card:hover .project-num { color: rgba(255,255,255,0.05); }
+  .project-content, .project-body { flex: 1; display: flex; flex-direction: column; }
+  .project-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(26px, 2.5vw, 38px);
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: auto;
+    padding-bottom: 24px;
+  }
+  .project-tag {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .project-card:hover .project-tag {
+    border-color: rgba(255,255,255,0.15);
+    color: var(--accent);
+  }
+  .project-link {
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    transition: color 0.25s, gap 0.25s var(--ease-out);
+  }
+  .project-card:hover .project-link { gap: 12px; }
+
+  /* Featured single project card */
+  .project-featured {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    position: relative;
+    transition: border-color 0.4s ease;
+  }
+  .project-featured:hover { border-color: rgba(79,107,255,0.3); }
+  .project-featured .project-accent-line { position: absolute; top:0; left:0; right:0; height:2px; z-index:2; }
+  .project-featured-visual {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid var(--border);
+  }
+  .project-featured-body {
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Kopilot — vraie capture d'écran */
+  .visual-kopilot {
+    background: #faf8f4;
+    padding: 0;
+    overflow: hidden;
+  }
+  .kopilot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+  }
+  .kopilot-dash {
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    height: 100%;
+    align-items: center;
+  }
+  /* Left: headline mock */
+  .kopilot-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 6px;
+  }
+  .kl-tag {
+    width: 64px; height: 8px;
+    background: rgba(251,146,60,0.35);
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+  .kl-h1 { height: 9px; width: 80%; background: rgba(15,15,15,0.35); border-radius: 3px; }
+  .kl-h2 { height: 9px; width: 70%; background: rgba(15,15,15,0.25); border-radius: 3px; }
+  .kl-h3 { height: 9px; width: 55%; background: rgba(251,146,60,0.7); border-radius: 3px; }
+  .kl-sub { height: 5px; width: 85%; background: rgba(15,15,15,0.12); border-radius: 2px; margin-top:6px; }
+  .kl-sub2 { height: 5px; width: 70%; background: rgba(15,15,15,0.12); border-radius: 2px; }
+  .kl-btns { display: flex; gap: 6px; margin-top: 8px; }
+  .kl-btn-solid { width: 48px; height: 12px; background: rgba(15,15,15,0.7); border-radius: 10px; }
+  .kl-btn-ghost { width: 52px; height: 12px; background: transparent; border: 1px solid rgba(15,15,15,0.2); border-radius: 10px; }
+  /* Right: illustration placeholder + floating cards */
+  .kopilot-right {
+    width: 42%;
+    position: relative;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  .kopilot-illus {
+    position: absolute;
+    top: 4px; left: 0; right: 0; bottom: 0;
+    background: rgba(219,234,254,0.5);
+    border-radius: 16px;
+    border: 1px solid rgba(147,197,253,0.3);
+  }
+  .kopilot-float-1 {
+    position: absolute;
+    top: -4px; right: -4px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 52px;
+  }
+  .kf-label { height: 4px; width: 100%; background: rgba(15,15,15,0.15); border-radius: 1px; }
+  .kf-val { height: 7px; width: 70%; background: rgba(15,15,15,0.4); border-radius: 2px; }
+  .kf-green { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-bottom: 1px; }
+  .kopilot-float-2 {
+    position: absolute;
+    bottom: 6px; left: -6px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 5px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 62px;
+  }
+  .kf2-icon { width: 10px; height: 10px; background: rgba(251,146,60,0.8); border-radius: 3px; margin-bottom:1px; }
+  .kf2-label { height: 3px; width: 100%; background: rgba(255,255,255,0.2); border-radius: 1px; }
+  .kf2-val { height: 6px; width: 80%; background: rgba(255,255,255,0.7); border-radius: 2px; }
+
+  @media (max-width: 1024px) {
+    .project-featured { grid-template-columns: 1fr; }
+    .project-featured-visual { height: 260px; border-right: none; border-bottom: 1px solid var(--border); }
+    .project-featured-body { padding: 32px 28px; }
+  }
+  @media (max-width: 768px) {
+    .project-featured-visual { height: 200px; }
+    .project-featured-body { padding: 28px 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     OFFRES / PRICING
+  ═══════════════════════════════════════ */
+  #offres { background: var(--bg); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: visible;
+    margin-bottom: 48px;
+  }
+  .pricing-card {
+    background: var(--bg);
+    padding: 40px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s var(--ease-out);
+  }
+  .pricing-card.popular {
+    background: var(--surface2);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 0 0 1px var(--blue), 0 30px 60px rgba(79,107,255,0.12);
+    border-radius: 4px;
+    z-index: 2;
+  }
+  .popular-badge {
+    position: absolute;
+    top: -14px; right: 24px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+  .plan-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .plan-price {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(44px, 4vw, 60px);
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.03em;
+  }
+  .plan-price span {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--muted);
+    vertical-align: super;
+    font-family: var(--font-display);
+  }
+  .plan-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .plan-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 28px;
+  }
+  .plan-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 36px;
+  }
+  .plan-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .plan-feature::before {
+    content: '✓';
+    color: var(--blue);
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+  .plan-cta-outline {
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text);
+  }
+  .plan-cta-outline:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.25);
+  }
+  .plan-cta-filled {
+    background: var(--blue);
+    color: #fff;
+    border: 1px solid var(--blue);
+  }
+  .plan-cta-filled:hover {
+    background: #3d59ff;
+    box-shadow: 0 8px 24px rgba(79,107,255,0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Maintenance */
+  .maintenance-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .maintenance-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+  }
+  .maintenance-card:hover {
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+  .maint-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .maint-name {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .maint-desc {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.popular { transform: none; box-shadow: 0 0 0 1px var(--blue); }
+    .maintenance-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .pricing-card { padding: 32px 24px; }
+  }
+
+  /* ═══════════════════════════════════════
+     POURQUOI MOI
+  ═══════════════════════════════════════ */
+  #pourquoi { background: var(--bg); }
+  .avantages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .avantage-card {
+    background: var(--surface);
+    padding: 48px 40px;
+    transition: background 0.3s ease;
+  }
+  .avantage-card:hover { background: var(--surface2); }
+  .avantage-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .avantage-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .avantage-desc {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .avantages-grid { grid-template-columns: 1fr; }
+    .avantage-card { padding: 32px 24px; }
+  }
+
+  /* ═══════════════════════════════════════
+     PROCESS
+  ═══════════════════════════════════════ */
+  #process { background: var(--bg); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: calc(12.5% + 16px);
+    right: calc(12.5% + 16px);
+    height: 1px;
+    background: linear-gradient(to right, var(--blue), rgba(79,107,255,0.2));
+    z-index: 0;
+  }
+  .process-step {
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number {
+    width: 44px; height: 44px;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--blue);
+    background: var(--surface);
+    margin-bottom: 24px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .process-step:hover .step-number {
+    background: var(--blue);
+    color: #fff;
+  }
+  .step-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1024px) {
+    .process-steps {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 768px) {
+    .process-steps { grid-template-columns: 1fr; gap: 32px; }
+    .process-step { padding: 0; display: flex; gap: 20px; align-items: flex-start; }
+    .step-number { flex-shrink: 0; margin-bottom: 0; }
+    .step-body {}
+  }
+
+  /* ═══════════════════════════════════════
+     À PROPOS
+  ═══════════════════════════════════════ */
+  #apropos { background: var(--surface); }
+  .apropos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .apropos-photo-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .apropos-photo {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 4px;
+    display: block;
+    filter: grayscale(15%);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .apropos-available {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 12px;
+    color: var(--text);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .available-dot {
+    width: 7px; height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(34,197,94,0.6);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+  .apropos-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(28px, 3.5vw, 52px);
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  .apropos-title em {
+    font-style: italic;
+    font-weight: 200;
+    color: var(--accent);
+  }
+  .apropos-p {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 480px;
+  }
+  .apropos-facts {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .apropos-fact { display: flex; flex-direction: column; gap: 3px; }
+  .fact-val {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .fact-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  .apropos-sep { width: 1px; height: 36px; background: var(--border); }
+  @media (max-width: 1024px) {
+    .apropos-grid { grid-template-columns: 1fr; gap: 48px; }
+    .apropos-photo { max-width: 100%; aspect-ratio: 16/9; object-position: center 20%; }
+  }
+  @media (max-width: 768px) {
+    .apropos-facts { gap: 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     FAQ
+  ═══════════════════════════════════════ */
+  #faq { background: var(--bg); }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: var(--bg);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text);
+    text-align: left;
+    gap: 20px;
+    transition: background 0.25s, color 0.25s;
+  }
+  .faq-q:hover { background: var(--surface2); color: var(--cta); }
+  .faq-q.open { background: var(--surface2); color: var(--cta); }
+  .faq-icon {
+    font-size: 22px;
+    font-weight: 200;
+    color: var(--blue);
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease-out);
+    line-height: 1;
+  }
+  .faq-q.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--ease-out), padding 0.3s ease;
+    background: var(--surface2);
+  }
+  .faq-a.open { max-height: 300px; }
+  .faq-a p {
+    padding: 0 32px 24px;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .faq-q { padding: 20px; }
+    .faq-a p { padding: 0 20px 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     CONTACT
+  ═══════════════════════════════════════ */
+  .gabin-photo-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .gabin-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    border: 2px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+  }
+  .gabin-photo-label {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+  .gabin-photo-label strong {
+    display: block;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .gabin-photo-label::before {
+    display: none;
+  }
+  /* ═══════════════════════════════════════
+     APPORTEUR D'AFFAIRES
+  ═══════════════════════════════════════ */
+  #apporteur {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .apporteur-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .apporteur-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .apporteur-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(34,197,94,0.6);
+  }
+  .apporteur-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 60px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .apporteur-title span {
+    color: #22c55e;
+  }
+  .apporteur-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 440px;
+  }
+  .apporteur-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .apporteur-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .apporteur-step:first-child { border-top: 1px solid var(--border); }
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    min-width: 28px;
+    padding-top: 2px;
+  }
+  .step-body {}
+  .step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .apporteur-commission {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .commission-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .commission-pct {
+    font-family: var(--font-display);
+    font-size: 88px;
+    font-weight: 900;
+    line-height: 1;
+    color: #22c55e;
+    letter-spacing: -0.03em;
+  }
+  .commission-label {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 140px;
+  }
+  .commission-divider {
+    height: 1px;
+    background: var(--border);
+  }
+  .commission-example {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .comm-example-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .comm-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  .comm-row-label { color: var(--muted); font-weight: 300; }
+  .comm-row-val { color: var(--text); font-weight: 600; }
+  .comm-row-val.green { color: #22c55e; }
+  .commission-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #22c55e;
+    color: #0a0a0a;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+    letter-spacing: 0.01em;
+  }
+  .commission-cta:hover { background: #16a34a; transform: translateY(-1px); }
+  @media (max-width: 1024px) {
+    .apporteur-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  #contact { background: var(--bg); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-left {}
+  .contact-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(36px, 4.5vw, 64px);
+    color: var(--text);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  .contact-sub {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 380px;
+  }
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 300;
+    transition: color 0.25s;
+  }
+  .contact-item:hover { color: var(--cta); }
+  .contact-item-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+  }
+  .contact-note {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .contact-form-wrapper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 44px 40px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .form-group {
+    margin-bottom: 32px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 10px 0;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group select {
+    background: transparent;
+    cursor: pointer;
+  }
+  .form-group select option {
+    background: var(--surface2);
+    color: var(--text);
+  }
+  .form-group textarea {
+    resize: none;
+    height: 90px;
+    line-height: 1.6;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--blue);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    background: var(--cta);
+    color: #000;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 16px 28px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s var(--ease-out), box-shadow 0.25s;
+  }
+  .form-submit:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+  }
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .contact-form-wrapper { padding: 32px 24px; }
+  }
+
+  /* ═══════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════ */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 48px 40px 24px;
+  }
+  .footer-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-brand-text {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .footer-nav {
+    display: flex;
+    gap: 32px;
+  }
+  .footer-nav a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover { color: var(--text); }
+  .footer-social {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-social a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--text); }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-tagline {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 768px) {
+    footer { padding: 40px 20px 24px; }
+    .footer-main {
+      flex-direction: column;
+      gap: 32px;
+      text-align: center;
+    }
+    .footer-brand { flex-direction: column; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; gap: 20px; }
+  }
+
+  /* ═══════════════════════════════════════
+     RGPD BANNER
+  ═══════════════════════════════════════ */
+  #rgpd-banner {
+    position: fixed;
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17,17,17,0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 14px 24px;
+    font-size: 12px;
+    color: var(--muted);
+    z-index: 900;
+    max-width: 560px;
+    width: calc(100% - 40px);
+    text-align: center;
+    line-height: 1.6;
+    animation: slideUp 0.4s var(--ease-out);
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  #rgpd-banner a { color: var(--blue); text-decoration: underline; margin-left: 8px; }
+
+  /* ═══════════════════════════════════════
+     STAGGER DELAYS
+  ═══════════════════════════════════════ */
+  .stagger-1 { transition-delay: 0.05s !important; }
+  .stagger-2 { transition-delay: 0.12s !important; }
+  .stagger-3 { transition-delay: 0.19s !important; }
+  .stagger-4 { transition-delay: 0.26s !important; }
+</style>
+</head>
+<body>
+
+<!-- Grain overlay -->
+<svg class="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="grain-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+</svg>
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <img src="images/gabyn-logo-white.svg" alt="Gabyn Studio" class="loader-logo" id="loader-logo">
+  <div class="loader-line" id="loader-line"></div>
+  <div class="loader-tagline" id="loader-tagline">Des sites qui travaillent pour vous</div>
+</div>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realisations" onclick="closeMobileMenu()">Réalisations</a>
+  <a href="#offres" onclick="closeMobileMenu()">Offres</a>
+  <a href="#apporteur" onclick="closeMobileMenu()">Apporteur</a>
+  <a href="#apropos" onclick="closeMobileMenu()">À propos</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact" onclick="closeMobileMenu()" style="color: var(--blue);">Démarrer un projet</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo" aria-label="Gabyn Studio">
+    <img src="images/gabyn-logo-white.svg" alt="Gabyn Studio">
+  </a>
+
+  <div class="nav-links">
+    <a href="#realisations">Réalisations</a>
+    <a href="#offres">Offres</a>
+    <a href="#apporteur">Apporteur</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="#contact" class="nav-cta">Démarrer un projet</a>
+
+  <button class="burger" id="burger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag" id="hero-tag">Studio web · Sautron · Nantes</div>
+
+      <div class="hero-headline" id="hero-headline">
+        <span class="line1">Votre présence</span>
+        <span class="line2">en ligne,</span>
+        <span class="line3">enfin.</span>
+      </div>
+
+      <p class="hero-sub" id="hero-sub">
+        Sites sur mesure pour les commerçants locaux.<br>
+        Livré en 7 jours. À partir de 490€.
+      </p>
+
+      <div class="hero-ctas" id="hero-ctas">
+        <a href="#realisations" class="btn-primary">Voir nos réalisations</a>
+        <a href="#contact" class="btn-ghost">
+          Parlons de votre projet <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat">
+          <span class="stat-value">0</span>
+          <span class="stat-label">template utilisé</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-value">7j</span>
+          <span class="stat-label">livraison garantie</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-value">490€</span>
+          <span class="stat-label">tout inclus</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" id="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <!-- First copy -->
+    <div class="marquee-item">Sites vitrines <span class="marquee-dot"></span></div>
+    <div class="marquee-item">PWA <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Référencement Google <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Livré en 7 jours <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Commerce local <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sautron <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Nantes <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Responsive mobile <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sans abonnement imposé <span class="marquee-dot"></span></div>
+    <!-- Second copy (duplicate for seamless loop) -->
+    <div class="marquee-item">Sites vitrines <span class="marquee-dot"></span></div>
+    <div class="marquee-item">PWA <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Référencement Google <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Livré en 7 jours <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Commerce local <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sautron <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Nantes <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Responsive mobile <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sans abonnement imposé <span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- HANDS BANNER -->
+<div class="hands-banner reveal">
+  <img src="images/hands.webp" alt="Gabin travaille sur votre site">
+  <div class="hands-banner-overlay">
+    <p class="hands-quote">"J'arrive avec votre site déjà fait.<br>Vous voyez le résultat avant de décider."</p>
+  </div>
+</div>
+
+<!-- RÉALISATIONS -->
+<section id="realisations">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Nos projets</div>
+      <h2 class="section-title">Ce qu'on a construit.</h2>
+      <p style="font-size:14px; color:var(--muted); margin-top:-36px; margin-bottom:60px; font-weight:300;">D'autres projets arrivent bientôt. En attendant, voici le premier.</p>
+    </div>
+
+    <!-- Carte featured Kopilot -->
+    <div class="project-featured reveal">
+      <div class="project-accent-line" style="background: #F97316"></div>
+      <div class="project-featured-visual">
+        <div class="project-visual-browser" style="height:100%">
+          <div class="project-visual-bar">
+            <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+          </div>
+          <div class="project-visual-screen visual-kopilot">
+            <img src="images/kopilot.webp" alt="Kopilot — plateforme SaaS de gestion de clubs d'entreprises" class="kopilot-img">
+          </div>
+        </div>
+      </div>
+      <div class="project-featured-body">
+        <span class="project-num" style="position:relative; top:auto; right:auto; font-size:56px; color:rgba(255,255,255,0.04); line-height:1; margin-bottom:8px; display:block">01</span>
+        <h3 class="project-name" style="font-size: clamp(32px,3.5vw,52px)">Kopilot</h3>
+        <p class="project-desc" style="font-size:14px; margin-bottom:16px">Plateforme SaaS · Gestion de clubs d'entreprises</p>
+        <p style="font-size:14px; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:24px;">Outil complet de gestion pour les clubs d'entreprises — membres, paiements, événements, newsletter et application mobile, centralisés dans un seul dashboard.</p>
+        <div class="project-tags" style="margin-bottom:28px">
+          <span class="project-tag">Application web</span>
+          <span class="project-tag">Dashboard</span>
+          <span class="project-tag">SaaS</span>
+          <span class="project-tag">Mobile app</span>
+        </div>
+        <a href="https://gabin-datapix.github.io/Kopilot/" target="_blank" rel="noopener" class="project-link" style="color: #F97316; border-top: 1px solid var(--border); padding-top:24px;">Voir le projet <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Tarifs</div>
+      <h2 class="section-title">Ce que je propose.</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card reveal stagger-1">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><span>€</span>490</div>
+        <div class="plan-sub">Paiement unique · Aucun abonnement forcé</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Site vitrine 5 pages</li>
+          <li class="plan-feature">Hébergement 1 an inclus</li>
+          <li class="plan-feature">Domaine .fr inclus</li>
+          <li class="plan-feature">Formulaire de contact</li>
+          <li class="plan-feature">WhatsApp intégré</li>
+          <li class="plan-feature">SEO technique de base</li>
+          <li class="plan-feature">Livré en 7 jours</li>
+        </ul>
+        <a href="#contact" class="plan-cta plan-cta-outline">Choisir Starter</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card popular reveal stagger-2">
+        <div class="popular-badge">Populaire</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><span>€</span>890</div>
+        <div class="plan-sub">Paiement unique · Le plus choisi</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Tout le Starter</li>
+          <li class="plan-feature">Google My Business optimisé</li>
+          <li class="plan-feature">Analytics Google</li>
+          <li class="plan-feature">Galerie photos soignée</li>
+          <li class="plan-feature">Balises SEO avancées</li>
+          <li class="plan-feature">3 rounds de retouches</li>
+        </ul>
+        <a href="#contact" class="plan-cta plan-cta-filled">Choisir Pro</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-card reveal stagger-3">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price"><span>€</span>1490</div>
+        <div class="plan-sub">Paiement unique · Tout inclus</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Tout le Pro</li>
+          <li class="plan-feature">PWA (app mobile)</li>
+          <li class="plan-feature">Système de réservation ou commande</li>
+          <li class="plan-feature">6 mois de maintenance inclus</li>
+          <li class="plan-feature">Formation 1h à la prise en main</li>
+        </ul>
+        <a href="#contact" class="plan-cta plan-cta-outline">Choisir Premium</a>
+      </div>
+    </div>
+
+    <!-- Maintenance -->
+    <div class="reveal">
+      <p style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;">Options maintenance mensuelle</p>
+      <div class="maintenance-row">
+        <div class="maintenance-card">
+          <div class="maint-price">29€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">Essentiel</div>
+          <div class="maint-desc">Mises à jour, sauvegardes, support email</div>
+        </div>
+        <div class="maintenance-card">
+          <div class="maint-price">59€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">Sérénité</div>
+          <div class="maint-desc">Essentiel + modifications illimitées</div>
+        </div>
+        <div class="maintenance-card">
+          <div class="maint-price">99€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">Studio</div>
+          <div class="maint-desc">Sérénité + rapport SEO mensuel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI MOI -->
+<section id="pourquoi">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">L'avantage Gabyn</div>
+      <h2 class="section-title">Pourquoi moi.</h2>
+    </div>
+
+    <div class="avantages-grid">
+      <div class="avantage-card reveal stagger-1">
+        <span class="avantage-icon">⚡</span>
+        <h3 class="avantage-title">Livré en 7 jours</h3>
+        <p class="avantage-desc">Pas de mois d'attente. Votre site est en ligne en une semaine, sans compromis sur la qualité.</p>
+      </div>
+      <div class="avantage-card reveal stagger-2">
+        <span class="avantage-icon">📍</span>
+        <h3 class="avantage-title">Local Sautron / Nantes</h3>
+        <p class="avantage-desc">Je connais votre marché. Je suis à côté, disponible, et je comprends les enjeux des commerces locaux du 44.</p>
+      </div>
+      <div class="avantage-card reveal stagger-3">
+        <span class="avantage-icon">🎯</span>
+        <h3 class="avantage-title">Site déjà fait</h3>
+        <p class="avantage-desc">J'arrive avec votre site déjà construit. Vous voyez le résultat avant de décider. Aucun engagement à signer à l'aveugle.</p>
+      </div>
+      <div class="avantage-card reveal stagger-4">
+        <span class="avantage-icon">💰</span>
+        <h3 class="avantage-title">Prix transparent</h3>
+        <p class="avantage-desc">Pas de surprise. Pas d'abonnement forcé. Le prix affiché est le prix payé — point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">La méthode</div>
+      <h2 class="section-title">Comment ça marche.</h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal stagger-1">
+        <div class="step-number">01</div>
+        <div class="step-body">
+          <h3 class="step-title">Repérage</h3>
+          <p class="step-desc">Je trouve votre commerce sur Google Maps et j'identifie ce dont vous avez besoin avant même qu'on se parle.</p>
+        </div>
+      </div>
+      <div class="process-step reveal stagger-2">
+        <div class="step-number">02</div>
+        <div class="step-body">
+          <h3 class="step-title">Création</h3>
+          <p class="step-desc">Je construis votre site en avance, avec votre identité, vos services, vos photos. Sans frais de départ.</p>
+        </div>
+      </div>
+      <div class="process-step reveal stagger-3">
+        <div class="step-number">03</div>
+        <div class="step-body">
+          <h3 class="step-title">Démonstration</h3>
+          <p class="step-desc">Vous voyez le résultat avant de décider. Si ça vous plaît, on continue. Si non, vous ne payez rien.</p>
+        </div>
+      </div>
+      <div class="process-step reveal stagger-4">
+        <div class="step-number">04</div>
+        <div class="step-body">
+          <h3 class="step-title">Livraison</h3>
+          <p class="step-desc">En ligne en 7 jours chrono. Domaine, hébergement, tout est géré. Vous n'avez rien à faire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos">
+  <div class="section-inner">
+    <div class="apropos-grid">
+      <div class="apropos-photo-col reveal">
+        <div class="apropos-photo-wrap">
+          <img src="images/gabin.webp" alt="Gabin — fondateur de Gabyn Studio" class="apropos-photo">
+          <div class="apropos-available">
+            <span class="available-dot"></span>Disponible pour nouveaux projets
+          </div>
+        </div>
+      </div>
+      <div class="apropos-text-col reveal stagger-2">
+        <div class="section-tag">Qui suis-je</div>
+        <h2 class="apropos-title">Je m'appelle Gabin.<br>J'ai 20 ans et je construis<br><em>des sites qui vendent.</em></h2>
+        <p class="apropos-p">Basé à Sautron, à deux pas de Nantes. Je ne suis pas une agence avec 12 intermédiaires — je suis la seule personne qui va toucher votre site, du premier pixel à la mise en ligne.</p>
+        <p class="apropos-p">Ma conviction : les commerçants locaux méritent les mêmes sites que les grandes marques. Sans payer le prix des grandes agences, sans attendre 3 mois.</p>
+        <div class="apropos-facts">
+          <div class="apropos-fact">
+            <span class="fact-val">20</span>
+            <span class="fact-label">ans</span>
+          </div>
+          <div class="apropos-sep"></div>
+          <div class="apropos-fact">
+            <span class="fact-val">5 ans</span>
+            <span class="fact-label">de code</span>
+          </div>
+          <div class="apropos-sep"></div>
+          <div class="apropos-fact">
+            <span class="fact-val">100%</span>
+            <span class="fact-label">local</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-flex; margin-top: 40px;">Travaillons ensemble →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Questions fréquentes</div>
+      <h2 class="section-title">Tout ce que vous<br>voulez savoir.</h2>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Est-ce que je peux modifier mon site moi-même ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Oui. Avec l'offre Premium, vous avez une formation d'1h pour apprendre à modifier les textes, photos et horaires vous-même. Pour les autres offres, chaque modification est traitée sous 24h sur simple message WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Que se passe-t-il après les 7 jours ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Votre site est en ligne et vous en êtes propriétaire. L'hébergement et le domaine sont inclus pour 1 an. Ensuite, vous choisissez librement de continuer avec une formule de maintenance mensuelle ou de gérer ça vous-même.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Comment vous faites pour livrer en 7 jours ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>J'arrive avec votre site déjà construit avant même qu'on se parle. Je prépare une version basée sur votre activité, vos photos publiques et votre univers. Vous validez, on affine en 1 ou 2 échanges, et c'est en ligne.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Et si le résultat ne me convient pas ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Vous voyez le site avant de payer quoi que ce soit. Si ça ne vous correspond pas du tout, vous ne payez rien. Zéro risque. C'est le principe de la démonstration avant engagement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Vous travaillez uniquement à Sautron ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Non, j'interviens partout en France. Tout se gère à distance — appel, visio, échanges par message. Aucun besoin de se déplacer. Si vous êtes en région nantaise et préférez un rendez-vous en personne, c'est possible aussi.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Le site sera-t-il bien positionné sur Google ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Tous les sites incluent le SEO technique de base (balises, vitesse, mobile-first). L'offre Pro ajoute le SEO avancé et l'optimisation Google My Business — ce qui est essentiel pour apparaître dans les recherches locales de votre ville.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPORTEUR D'AFFAIRES -->
+<section id="apporteur">
+  <div class="section-inner">
+    <div class="apporteur-grid reveal">
+
+      <!-- Gauche : texte + étapes -->
+      <div>
+        <div class="apporteur-badge">Programme apporteur d'affaires</div>
+        <h2 class="apporteur-title">Tu connais<br>quelqu'un ?<br><span>Gagne 10%.</span></h2>
+        <p class="apporteur-desc">Tu présentes un prospect, je m'occupe de tout. Si la mission aboutit, tu touches 10% du montant total de la commande — sans effort supplémentaire.</p>
+
+        <div class="apporteur-steps">
+          <div class="apporteur-step">
+            <span class="step-num">01</span>
+            <div class="step-body">
+              <div class="step-title">Tu recommandes</div>
+              <div class="step-desc">Tu me mets en contact avec quelqu'un qui a besoin d'un site web — ami, client, commerçant du coin.</div>
+            </div>
+          </div>
+          <div class="apporteur-step">
+            <span class="step-num">02</span>
+            <div class="step-body">
+              <div class="step-title">Je gère la mission</div>
+              <div class="step-desc">Devis, conception, livraison — je m'occupe de tout. Tu n'as rien de plus à faire.</div>
+            </div>
+          </div>
+          <div class="apporteur-step">
+            <span class="step-num">03</span>
+            <div class="step-body">
+              <div class="step-title">Tu touches ta commission</div>
+              <div class="step-desc">Dès que la commande est signée et réglée, je te verse 10% du montant HT par virement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Droite : carte commission -->
+      <div class="apporteur-commission">
+        <div class="commission-header">
+          <div class="commission-pct">10%</div>
+          <div class="commission-label">de la commande totale, versés dès la signature.</div>
+        </div>
+        <div class="commission-divider"></div>
+        <div class="commission-example">
+          <div class="comm-example-title">Exemple concret</div>
+          <div class="comm-row">
+            <span class="comm-row-label">Site vitrine Starter</span>
+            <span class="comm-row-val">490 €</span>
+          </div>
+          <div class="comm-row">
+            <span class="comm-row-label">Ta commission</span>
+            <span class="comm-row-val green">+ 49 €</span>
+          </div>
+          <div class="commission-divider"></div>
+          <div class="comm-row">
+            <span class="comm-row-label">Site Pro complet</span>
+            <span class="comm-row-val">990 €</span>
+          </div>
+          <div class="comm-row">
+            <span class="comm-row-label">Ta commission</span>
+            <span class="comm-row-val green">+ 99 €</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">Devenir apporteur →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <div class="gabin-photo-wrap">
+          <img src="images/gabin.webp" alt="Gabin — Gabyn Studio" class="gabin-photo">
+          <div class="gabin-photo-label">
+            <strong>Gabin</strong>
+            Fondateur · Gabyn Studio
+          </div>
+        </div>
+        <div class="section-tag">Démarrons ensemble</div>
+        <h2 class="contact-title">Un projet<br>en tête ?</h2>
+        <p class="contact-sub">Répondez en moins de 24h. Basé à Sautron, j'interviens sur tout le 44.</p>
+
+        <div class="contact-details">
+          <a href="mailto:contact@gabyn.studio" class="contact-item">
+            <span class="contact-item-icon">✉</span>
+            contact@gabyn.studio
+          </a>
+          <a href="https://wa.me/33600000000" class="contact-item">
+            <span class="contact-item-icon">💬</span>
+            WhatsApp direct
+          </a>
+          <div class="contact-item">
+            <span class="contact-item-icon">📍</span>
+            Sautron, Loire-Atlantique
+          </div>
+        </div>
+
+        <p class="contact-note">Devis gratuit · Sans engagement</p>
+      </div>
+
+      <div class="contact-right reveal stagger-2">
+        <div class="contact-form-wrapper">
+          <form id="contact-form" action="https://formspree.io/f/xwpbobgp" method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jean@dupont.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="type">Type de projet</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected>Choisir…</option>
+                <option value="vitrine">Site vitrine</option>
+                <option value="refonte">Refonte</option>
+                <option value="pwa">PWA</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget estimé</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Choisir…</option>
+                <option value="starter">490 – 890€</option>
+                <option value="pro">890 – 1 490€</option>
+                <option value="premium">+1 490€</option>
+                <option value="discuss">À discuter</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet en quelques mots…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <span>Envoyer</span>
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RGPD BANNER -->
+<div id="rgpd-banner" style="display:none">
+  <p>Ce site n'utilise aucun cookie de tracking. Les données du formulaire sont transmises via Formspree et ne sont pas partagées. <a href="#" onclick="document.getElementById('rgpd-banner').remove(); return false;">Fermer</a></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="images/gabyn-logo-white.svg" alt="Gabyn Studio" style="height:36px; width:auto;">
+      <span class="footer-brand-text">© 2025 Gabyn Studio · Sautron</span>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#realisations">Réalisations</a>
+      <a href="#offres">Offres</a>
+      <a href="#apropos">À propos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-social">
+      <a href="https://instagram.com/gabyn.studio" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/company/gabyn-studio" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-tagline">Fait avec ✦ à Sautron</span>
+  </div>
+</footer>
+
+<script>
+  /* ═══════════════════════════════════════
+     LOADER
+  ═══════════════════════════════════════ */
+  (function() {
+    const loaderLogo = document.getElementById('loader-logo');
+    const loaderLine = document.getElementById('loader-line');
+    const loaderTagline = document.getElementById('loader-tagline');
+    const loader = document.getElementById('loader');
+
+    setTimeout(() => { loaderLogo.classList.add('visible'); }, 80);
+    setTimeout(() => { loaderLine.style.width = '180px'; }, 400);
+    setTimeout(() => { loaderTagline.style.opacity = '1'; }, 700);
+
+    setTimeout(() => {
+      loader.style.transition = 'opacity 0.55s ease, transform 0.55s cubic-bezier(.16,1,.3,1)';
+      loader.style.opacity = '0';
+      loader.style.transform = 'translateY(-16px)';
+      loader.style.pointerEvents = 'none';
+      setTimeout(() => {
+        loader.style.display = 'none';
+        triggerHeroAnimations();
+      }, 560);
+    }, 2000);
+  })();
+
+  function triggerHeroAnimations() {
+    const heroTag = document.getElementById('hero-tag');
+    const heroHeadline = document.getElementById('hero-headline');
+    const heroSub = document.getElementById('hero-sub');
+    const heroCtas = document.getElementById('hero-ctas');
+    const heroStats = document.getElementById('hero-stats');
+    const heroVisual = document.getElementById('hero-visual');
+    const scrollInd = document.getElementById('scroll-indicator');
+
+    if (heroTag) heroTag.classList.add('visible');
+    if (heroHeadline) setTimeout(() => heroHeadline.classList.add('visible'), 100);
+    if (heroSub) heroSub.classList.add('visible');
+    if (heroCtas) heroCtas.classList.add('visible');
+    if (heroStats) heroStats.classList.add('visible');
+    if (heroVisual) heroVisual.classList.add('visible');
+    if (scrollInd) scrollInd.classList.add('visible');
+  }
+
+  /* ═══════════════════════════════════════
+     CUSTOM CURSOR
+  ═══════════════════════════════════════ */
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+
+  function lerpRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(lerpRing);
+  }
+  lerpRing();
+
+  const hoverTargets = document.querySelectorAll('a, button, .project-card, .pricing-card, .avantage-card');
+  hoverTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  /* ═══════════════════════════════════════
+     NAV SCROLL
+  ═══════════════════════════════════════ */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }, { passive: true });
+
+  /* ═══════════════════════════════════════
+     MOBILE MENU
+  ═══════════════════════════════════════ */
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const burger = document.getElementById('burger');
+    menu.classList.toggle('active');
+    burger.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const burger = document.getElementById('burger');
+    menu.classList.remove('active');
+    burger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  /* ═══════════════════════════════════════
+     INTERSECTION OBSERVER
+  ═══════════════════════════════════════ */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ═══════════════════════════════════════
+     FORM SUBMIT — Formspree
+  ═══════════════════════════════════════ */
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    btn.innerHTML = '<span>Envoi en cours…</span><span></span>';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        btn.innerHTML = '<span>Message envoyé ✓</span><span></span>';
+        btn.style.background = 'transparent';
+        btn.style.color = '#4F6BFF';
+        btn.style.border = '1px solid #4F6BFF';
+        form.reset();
+        setTimeout(() => {
+          btn.innerHTML = '<span>Envoyer</span><span>→</span>';
+          btn.style.background = ''; btn.style.color = ''; btn.style.border = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        btn.innerHTML = '<span>Erreur, réessayez</span><span></span>';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.innerHTML = '<span>Erreur réseau</span><span></span>';
+      btn.disabled = false;
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     FAQ TOGGLE
+  ═══════════════════════════════════════ */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-q.open').forEach(q => {
+      q.classList.remove('open');
+      q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+<!-- Plausible Analytics (privacy-friendly, no cookie) -->
+<script defer data-domain="gabyn.studio" src="https://plausible.io/js/script.js"></script>
+
+<script>
+  /* RGPD banner — show once, dismissed in sessionStorage */
+  (function() {
+    if (!sessionStorage.getItem('rgpd')) {
+      setTimeout(() => {
+        const b = document.getElementById('rgpd-banner');
+        if (b) {
+          b.style.display = 'block';
+          b.querySelector('a').addEventListener('click', () => {
+            sessionStorage.setItem('rgpd', '1');
+          });
+        }
+      }, 3500);
+    }
+  })();
+</script>
+</body>
+</html>
