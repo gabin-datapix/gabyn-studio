@@ -1736,6 +1736,12 @@
     transition: color 0.25s;
   }
   .contact-item:hover { color: var(--cta); }
+  .contact-whatsapp {
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto !important;
+  }
+  .contact-whatsapp:hover { color: #25d366 !important; }
   .contact-item-icon {
     font-size: 18px;
     width: 24px;
@@ -2487,7 +2493,7 @@
             <span class="contact-item-icon">✉</span>
             gabin@datapix.fr
           </a>
-          <a href="https://wa.me/33618530070" class="contact-item" target="_blank" rel="noopener">
+          <a href="https://wa.me/33618530070" class="contact-item contact-whatsapp" target="_blank" rel="noopener noreferrer" onclick="window.open('https://wa.me/33618530070','_blank'); return false;">
             <span class="contact-item-icon">💬</span>
             WhatsApp direct
           </a>
