@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gabyn Studio — Sites web pour commerçants locaux · Sautron, Nantes</title>
-<meta name="description" content="Gabyn Studio crée des sites web sur mesure pour les commerçants locaux de Sautron et Nantes. Livré en 7 jours. À partir de 490€. Devis gratuit sans engagement.">
+<meta name="description" content="Gabyn Studio prépare une première ébauche concrète de site pour les commerces locaux de Sautron et Nantes. Landing dès 490 €, site vitrine dès 890 €, suivi avec hébergement dès 13 €/mois.">
 <meta name="keywords" content="création site web Sautron, site internet Nantes, web design Loire-Atlantique, site vitrine commerçant, Gabyn Studio">
 <meta name="author" content="Gabyn Studio">
 <meta name="robots" content="index, follow">
@@ -12,7 +12,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Gabyn Studio — Des sites qui travaillent pour vous">
-<meta property="og:description" content="Sites sur mesure pour les commerçants locaux. Livré en 7 jours. À partir de 490€.">
+<meta property="og:description" content="Une vraie ébauche de site, déjà préparée avant engagement. Landing dès 490 €, site vitrine dès 890 €.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gabyn.studio/">
 <meta property="og:locale" content="fr_FR">
@@ -21,7 +21,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gabyn Studio — Des sites qui travaillent pour vous">
-<meta name="twitter:description" content="Sites sur mesure pour les commerçants locaux. Livré en 7 jours. À partir de 490€.">
+<meta name="twitter:description" content="Une vraie ébauche de site, déjà préparée avant engagement. Landing dès 490 €, site vitrine dès 890 €.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -383,7 +383,7 @@
   }
   .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(48px, 5.8vw, 96px);
+    font-size: clamp(42px, 5.2vw, 82px);
     line-height: 1.0;
     margin-bottom: 28px;
     overflow: hidden;
@@ -1115,10 +1115,50 @@
     color: var(--muted);
     margin-bottom: 32px;
   }
+  .plan-price-prefix {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
   .plan-divider {
     height: 1px;
     background: var(--border);
     margin-bottom: 28px;
+  }
+  .plan-details {
+    margin-top: 22px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+  .plan-details summary {
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s ease;
+  }
+  .plan-details summary::-webkit-details-marker { display: none; }
+  .plan-details summary::after {
+    content: '+';
+    color: var(--blue);
+    font-size: 16px;
+    line-height: 1;
+  }
+  .plan-details[open] summary { color: var(--text); }
+  .plan-details[open] summary::after { content: '−'; }
+  .plan-detail-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 18px;
   }
   .plan-features {
     flex: 1;
@@ -1208,6 +1248,9 @@
     color: var(--muted);
     font-weight: 300;
   }
+  .maintenance-card .plan-details {
+    margin-top: 18px;
+  }
 
   @media (max-width: 1024px) {
     .pricing-grid { grid-template-columns: 1fr; }
@@ -1267,24 +1310,35 @@
   #process { background: var(--bg); }
   .process-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    position: relative;
-  }
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 22px;
-    left: calc(12.5% + 16px);
-    right: calc(12.5% + 16px);
-    height: 1px;
-    background: linear-gradient(to right, var(--blue), rgba(79,107,255,0.2));
-    z-index: 0;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
   .process-step {
-    padding: 0 24px;
-    position: relative;
-    z-index: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .process-step summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    cursor: pointer;
+  }
+  .process-step summary::-webkit-details-marker { display: none; }
+  .process-step summary::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 20px;
+    color: var(--blue);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .process-step[open] summary::after {
+    content: '−';
   }
   .step-number {
     width: 44px; height: 44px;
@@ -1298,39 +1352,45 @@
     font-size: 13px;
     color: var(--blue);
     background: var(--surface);
-    margin-bottom: 24px;
     transition: background 0.3s, color 0.3s;
+    flex-shrink: 0;
   }
+  .process-step[open] .step-number,
   .process-step:hover .step-number {
     background: var(--blue);
     color: #fff;
+  }
+  .step-body {
+    flex: 1;
+    min-width: 0;
   }
   .step-title {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 18px;
     color: var(--text);
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   .step-desc {
     font-size: 13px;
     color: var(--muted);
     font-weight: 300;
     line-height: 1.7;
+    padding: 0 24px 24px 86px;
   }
 
   @media (max-width: 1024px) {
-    .process-steps {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    .process-steps::before { display: none; }
+    .step-desc { padding-left: 86px; }
   }
   @media (max-width: 768px) {
-    .process-steps { grid-template-columns: 1fr; gap: 32px; }
-    .process-step { padding: 0; display: flex; gap: 20px; align-items: flex-start; }
-    .step-number { flex-shrink: 0; margin-bottom: 0; }
-    .step-body {}
+    .process-step summary {
+      padding: 18px 18px;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .step-desc {
+      padding: 0 18px 18px 18px;
+    }
   }
 
   /* ═══════════════════════════════════════
@@ -2055,14 +2115,18 @@
       <div class="hero-tag" id="hero-tag">Studio web · Sautron · Nantes</div>
 
       <div class="hero-headline" id="hero-headline">
-        <span class="line1">Votre présence</span>
-        <span class="line2">en ligne,</span>
-        <span class="line3">enfin.</span>
+        <span class="line1">Votre site,</span>
+        <span class="line2">déjà préparé.</span>
+        <span class="line3">On l'améliore ensemble.</span>
       </div>
 
       <p class="hero-sub" id="hero-sub">
-        Sites sur mesure pour les commerçants locaux.<br>
-        Livré en 7 jours. À partir de 490€.
+        Je prépare une vraie première version de votre site avant de parler d'engagement.
+        Vous découvrez une base concrète, puis on l'ajuste ensemble si elle vous plaît.
+      </p>
+
+      <p class="hero-sub" style="max-width: 520px; margin-top: -18px; margin-bottom: 30px; color: var(--text);">
+        Landing complète dès 490 € · Site vitrine dès 890 € · Application sur devis
       </p>
 
       <div class="hero-ctas" id="hero-ctas">
@@ -2080,12 +2144,12 @@
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-value">7j</span>
-          <span class="stat-label">livraison garantie</span>
+          <span class="stat-label">pour une landing validée</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
-          <span class="stat-value">490€</span>
-          <span class="stat-label">tout inclus</span>
+          <span class="stat-value">490 €</span>
+          <span class="stat-label">pour démarrer</span>
         </div>
       </div>
     </div>
@@ -2104,9 +2168,9 @@
   <div class="marquee-track">
     <!-- First copy -->
     <div class="marquee-item">Sites vitrines <span class="marquee-dot"></span></div>
-    <div class="marquee-item">PWA <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Première ébauche préparée <span class="marquee-dot"></span></div>
     <div class="marquee-item">Référencement Google <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Livré en 7 jours <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Landing en 7 jours <span class="marquee-dot"></span></div>
     <div class="marquee-item">Commerce local <span class="marquee-dot"></span></div>
     <div class="marquee-item">Sautron <span class="marquee-dot"></span></div>
     <div class="marquee-item">Nantes <span class="marquee-dot"></span></div>
@@ -2114,9 +2178,9 @@
     <div class="marquee-item">Sans abonnement imposé <span class="marquee-dot"></span></div>
     <!-- Second copy (duplicate for seamless loop) -->
     <div class="marquee-item">Sites vitrines <span class="marquee-dot"></span></div>
-    <div class="marquee-item">PWA <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Première ébauche préparée <span class="marquee-dot"></span></div>
     <div class="marquee-item">Référencement Google <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Livré en 7 jours <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Landing en 7 jours <span class="marquee-dot"></span></div>
     <div class="marquee-item">Commerce local <span class="marquee-dot"></span></div>
     <div class="marquee-item">Sautron <span class="marquee-dot"></span></div>
     <div class="marquee-item">Nantes <span class="marquee-dot"></span></div>
@@ -2129,7 +2193,7 @@
 <div class="hands-banner reveal">
   <img src="images/hands.webp" alt="Gabin travaille sur votre site">
   <div class="hands-banner-overlay">
-    <p class="hands-quote">"J'arrive avec votre site déjà fait.<br>Vous voyez le résultat avant de décider."</p>
+    <p class="hands-quote">"Je ne vous demande pas d'imaginer votre futur site.<br>Je vous en montre une première version."</p>
   </div>
 </div>
 
@@ -2181,79 +2245,164 @@
     </div>
 
     <div class="pricing-grid">
-      <!-- Starter -->
+      <!-- Landing -->
       <div class="pricing-card reveal stagger-1">
-        <div class="plan-name">Starter</div>
+        <div class="plan-name">Landing</div>
         <div class="plan-price"><span>€</span>490</div>
-        <div class="plan-sub">Paiement unique · Aucun abonnement forcé</div>
+        <div class="plan-sub">Paiement unique · Idéal pour démarrer</div>
         <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature">Site vitrine 5 pages</li>
-          <li class="plan-feature">Hébergement 1 an inclus</li>
-          <li class="plan-feature">Domaine .fr inclus</li>
-          <li class="plan-feature">Formulaire de contact</li>
-          <li class="plan-feature">WhatsApp intégré</li>
-          <li class="plan-feature">SEO technique de base</li>
-          <li class="plan-feature">Livré en 7 jours</li>
-        </ul>
-        <a href="#contact" class="plan-cta plan-cta-outline">Choisir Starter</a>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:22px;">Une page unique, complète et professionnelle pour présenter votre commerce, rassurer vos visiteurs et leur donner envie de vous contacter.</p>
+        <details class="plan-details">
+          <summary>Voir le détail</summary>
+          <ul class="plan-features">
+            <li class="plan-feature">Landing page complète</li>
+            <li class="plan-feature">8 à 12 sections</li>
+            <li class="plan-feature">Design personnalisé</li>
+            <li class="plan-feature">Version mobile optimisée</li>
+            <li class="plan-feature">Présentation du commerce</li>
+            <li class="plan-feature">Services ou produits principaux mis en avant</li>
+            <li class="plan-feature">Galerie photos ou visuels du commerce</li>
+            <li class="plan-feature">Horaires et informations pratiques</li>
+            <li class="plan-feature">Adresse et intégration Google Maps</li>
+            <li class="plan-feature">Bouton appel, contact ou WhatsApp</li>
+            <li class="plan-feature">Formulaire de contact simple</li>
+            <li class="plan-feature">Bases SEO local</li>
+            <li class="plan-feature">Première ébauche préparée en amont</li>
+            <li class="plan-feature">1 aller-retour de retouches inclus</li>
+            <li class="plan-feature">Livraison en 7 jours après validation des contenus</li>
+          </ul>
+          <p class="plan-detail-note">Hébergement inclus uniquement avec une offre de suivi mensuel.</p>
+        </details>
+        <a href="#contact" class="plan-cta plan-cta-outline">Choisir Landing</a>
       </div>
 
-      <!-- Pro -->
+      <!-- Site Vitrine -->
       <div class="pricing-card popular reveal stagger-2">
         <div class="popular-badge">Populaire</div>
-        <div class="plan-name">Pro</div>
+        <div class="plan-name">Site Vitrine</div>
         <div class="plan-price"><span>€</span>890</div>
-        <div class="plan-sub">Paiement unique · Le plus choisi</div>
+        <div class="plan-sub">Paiement unique · Pour une présence plus complète</div>
         <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature">Tout le Starter</li>
-          <li class="plan-feature">Google My Business optimisé</li>
-          <li class="plan-feature">Analytics Google</li>
-          <li class="plan-feature">Galerie photos soignée</li>
-          <li class="plan-feature">Balises SEO avancées</li>
-          <li class="plan-feature">3 rounds de retouches</li>
-        </ul>
-        <a href="#contact" class="plan-cta plan-cta-filled">Choisir Pro</a>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:22px;">Un site multi-pages pour présenter votre activité en détail, structurer vos contenus et renforcer votre crédibilité auprès de vos futurs clients.</p>
+        <details class="plan-details">
+          <summary>Voir le détail</summary>
+          <ul class="plan-features">
+            <li class="plan-feature">Jusqu'à 5 pages</li>
+            <li class="plan-feature">Page Accueil</li>
+            <li class="plan-feature">Page À propos</li>
+            <li class="plan-feature">Page Services / Prestations</li>
+            <li class="plan-feature">Page Galerie / Réalisations</li>
+            <li class="plan-feature">Page Contact</li>
+            <li class="plan-feature">Design personnalisé</li>
+            <li class="plan-feature">Version mobile optimisée</li>
+            <li class="plan-feature">Structure claire et professionnelle</li>
+            <li class="plan-feature">SEO local de base par page</li>
+            <li class="plan-feature">Formulaire de contact</li>
+            <li class="plan-feature">Bouton appel, contact ou WhatsApp</li>
+            <li class="plan-feature">Intégration Google Maps</li>
+            <li class="plan-feature">Première ébauche préparée en amont</li>
+            <li class="plan-feature">2 allers-retours de retouches inclus</li>
+            <li class="plan-feature">Livraison sous 10 à 14 jours après validation des contenus</li>
+          </ul>
+          <p class="plan-detail-note">Hébergement inclus uniquement avec une offre de suivi mensuel.</p>
+        </details>
+        <a href="#contact" class="plan-cta plan-cta-filled">Choisir Site Vitrine</a>
       </div>
 
-      <!-- Premium -->
+      <!-- Application -->
       <div class="pricing-card reveal stagger-3">
-        <div class="plan-name">Premium</div>
-        <div class="plan-price"><span>€</span>1490</div>
-        <div class="plan-sub">Paiement unique · Tout inclus</div>
+        <div class="plan-name">Application</div>
+        <div class="plan-price-prefix">À partir de</div>
+        <div class="plan-price"><span>€</span>1 490</div>
+        <div class="plan-sub">Projet avancé · Sur devis selon besoin</div>
         <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature">Tout le Pro</li>
-          <li class="plan-feature">PWA (app mobile)</li>
-          <li class="plan-feature">Système de réservation ou commande</li>
-          <li class="plan-feature">6 mois de maintenance inclus</li>
-          <li class="plan-feature">Formation 1h à la prise en main</li>
-        </ul>
-        <a href="#contact" class="plan-cta plan-cta-outline">Choisir Premium</a>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:22px;">Pour les commerces qui veulent plus qu'un site : réservation simple, précommande, mini-application web ou parcours client avancé.</p>
+        <details class="plan-details">
+          <summary>Voir le détail</summary>
+          <ul class="plan-features">
+            <li class="plan-feature">Tout ou partie du Site Vitrine selon le projet</li>
+            <li class="plan-feature">Mini-application web ou PWA</li>
+            <li class="plan-feature">Parcours client avancé</li>
+            <li class="plan-feature">Formulaire avancé</li>
+            <li class="plan-feature">Réservation simple</li>
+            <li class="plan-feature">Précommande simple</li>
+            <li class="plan-feature">Espace administrable simple selon besoin</li>
+            <li class="plan-feature">Automatisations simples</li>
+            <li class="plan-feature">Notifications email simples</li>
+            <li class="plan-feature">Cadrage fonctionnel inclus</li>
+            <li class="plan-feature">Formation 1h à la prise en main</li>
+            <li class="plan-feature">Délai selon périmètre</li>
+          </ul>
+          <p class="plan-detail-note">Le tarif démarre à 1 490 €. Les fonctionnalités avancées comme paiement en ligne, e-commerce complet, espace client, base de données complexe, gestion de stock ou intégrations spécifiques font l'objet d'un devis séparé.</p>
+        </details>
+        <a href="#contact" class="plan-cta plan-cta-outline">Discuter du projet</a>
       </div>
     </div>
 
     <!-- Maintenance -->
     <div class="reveal">
-      <p style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;">Options maintenance mensuelle</p>
+      <p style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;">Suivi mensuel</p>
       <div class="maintenance-row">
         <div class="maintenance-card">
-          <div class="maint-price">29€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
-          <div class="maint-name">Essentiel</div>
-          <div class="maint-desc">Mises à jour, sauvegardes, support email</div>
+          <div class="maint-price">13 €<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">En ligne</div>
+          <div class="plan-sub" style="margin: 8px 0 14px;">Pour garder votre site accessible</div>
+          <div class="maint-desc" style="margin-bottom: 14px;">L'essentiel pour maintenir votre site en ligne sans vous occuper de la technique.</div>
+          <details class="plan-details">
+            <summary>Voir le détail</summary>
+            <ul class="plan-features" style="margin-bottom: 0;">
+              <li class="plan-feature">Hébergement du site</li>
+              <li class="plan-feature">Maintien en ligne</li>
+              <li class="plan-feature">Vérification technique de base</li>
+              <li class="plan-feature">Corrections techniques mineures en cas de bug</li>
+              <li class="plan-feature">Support email</li>
+              <li class="plan-feature">Aucune modification de contenu incluse</li>
+              <li class="plan-feature">Hors nom de domaine, adresse email pro et abonnements externes</li>
+            </ul>
+          </details>
+          <a href="#contact" class="plan-cta plan-cta-outline" style="margin-top: 22px;">Choisir En ligne</a>
         </div>
         <div class="maintenance-card">
-          <div class="maint-price">59€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
-          <div class="maint-name">Sérénité</div>
-          <div class="maint-desc">Essentiel + modifications illimitées</div>
+          <div class="maint-price">39 €<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">Confort</div>
+          <div class="plan-sub" style="margin: 8px 0 14px;">Pour garder votre site à jour</div>
+          <div class="maint-desc" style="margin-bottom: 14px;">Une formule simple pour faire évoluer les informations importantes de votre site sans vous en occuper.</div>
+          <details class="plan-details">
+            <summary>Voir le détail</summary>
+            <ul class="plan-features" style="margin-bottom: 0;">
+              <li class="plan-feature">Tout l'abonnement En ligne</li>
+              <li class="plan-feature">1 à 2 modifications simples par mois</li>
+              <li class="plan-feature">Changement de texte</li>
+              <li class="plan-feature">Changement d'image</li>
+              <li class="plan-feature">Mise à jour d'horaires</li>
+              <li class="plan-feature">Modification d'un lien ou bouton</li>
+              <li class="plan-feature">Support prioritaire</li>
+            </ul>
+          </details>
+          <a href="#contact" class="plan-cta plan-cta-outline" style="margin-top: 22px;">Choisir Confort</a>
         </div>
         <div class="maintenance-card">
-          <div class="maint-price">99€<span style="font-size:14px; color: var(--muted)">/mois</span></div>
-          <div class="maint-name">Studio</div>
-          <div class="maint-desc">Sérénité + rapport SEO mensuel</div>
+          <div class="maint-price">69 €<span style="font-size:14px; color: var(--muted)">/mois</span></div>
+          <div class="maint-name">Plus</div>
+          <div class="plan-sub" style="margin: 8px 0 14px;">Pour faire vivre votre site régulièrement</div>
+          <div class="maint-desc" style="margin-bottom: 14px;">Un accompagnement plus régulier pour garder un site actif, à jour et mieux exploité.</div>
+          <details class="plan-details">
+            <summary>Voir le détail</summary>
+            <ul class="plan-features" style="margin-bottom: 0;">
+              <li class="plan-feature">Tout l'abonnement Confort</li>
+              <li class="plan-feature">Jusqu'à 4 modifications simples par mois</li>
+              <li class="plan-feature">Ajout de petits blocs de contenu</li>
+              <li class="plan-feature">Mini-bilan mensuel</li>
+              <li class="plan-feature">Recommandations d'amélioration</li>
+              <li class="plan-feature">Suivi SEO local simple</li>
+              <li class="plan-feature">Support prioritaire</li>
+            </ul>
+          </details>
+          <a href="#contact" class="plan-cta plan-cta-outline" style="margin-top: 22px;">Choisir Plus</a>
         </div>
       </div>
+      <p style="font-size:13px; color:var(--muted); line-height:1.8; margin-top:24px;">Une modification simple correspond à un changement de texte, d'image, d'horaire, de lien, de bouton ou à l'ajout d'un petit bloc de contenu. Les nouvelles pages complètes, nouvelles fonctionnalités, refontes graphiques, formulaires complexes, intégrations externes, campagnes publicitaires ou contenus longs font l'objet d'un devis séparé.</p>
+      <p style="font-size:13px; color:var(--muted); line-height:1.8; margin-top:14px;">L'hébergement est inclus dans les offres de suivi mensuel. Les noms de domaine, adresses email professionnelles ou abonnements à des outils externes peuvent être accompagnés, mais restent facturés séparément si nécessaire.</p>
     </div>
   </div>
 </section>
@@ -2269,8 +2418,8 @@
     <div class="avantages-grid">
       <div class="avantage-card reveal stagger-1">
         <span class="avantage-icon">⚡</span>
-        <h3 class="avantage-title">Livré en 7 jours</h3>
-        <p class="avantage-desc">Pas de mois d'attente. Votre site est en ligne en une semaine, sans compromis sur la qualité.</p>
+        <h3 class="avantage-title">Une base concrète tout de suite</h3>
+        <p class="avantage-desc">Je ne vous vends pas une idée dans le vide. Je prépare une vraie ébauche de site pour que vous puissiez juger sur du concret.</p>
       </div>
       <div class="avantage-card reveal stagger-2">
         <span class="avantage-icon">📍</span>
@@ -2280,12 +2429,12 @@
       <div class="avantage-card reveal stagger-3">
         <span class="avantage-icon">🎯</span>
         <h3 class="avantage-title">Site déjà fait</h3>
-        <p class="avantage-desc">J'arrive avec votre site déjà construit. Vous voyez le résultat avant de décider. Aucun engagement à signer à l'aveugle.</p>
+        <p class="avantage-desc">Votre site est déjà préparé. Vous le découvrez, puis on l'améliore ensemble s'il vous ressemble vraiment.</p>
       </div>
       <div class="avantage-card reveal stagger-4">
         <span class="avantage-icon">💰</span>
         <h3 class="avantage-title">Prix transparent</h3>
-        <p class="avantage-desc">Pas de surprise. Pas d'abonnement forcé. Le prix affiché est le prix payé — point.</p>
+        <p class="avantage-desc">Vous démarrez simplement à 490 €, puis vous choisissez si vous voulez un suivi mensuel avec hébergement inclus.</p>
       </div>
     </div>
   </div>
@@ -2300,34 +2449,51 @@
     </div>
 
     <div class="process-steps">
-      <div class="process-step reveal stagger-1">
-        <div class="step-number">01</div>
-        <div class="step-body">
-          <h3 class="step-title">Repérage</h3>
-          <p class="step-desc">Je trouve votre commerce sur Google Maps et j'identifie ce dont vous avez besoin avant même qu'on se parle.</p>
-        </div>
-      </div>
-      <div class="process-step reveal stagger-2">
-        <div class="step-number">02</div>
-        <div class="step-body">
-          <h3 class="step-title">Création</h3>
-          <p class="step-desc">Je construis votre site en avance, avec votre identité, vos services, vos photos. Sans frais de départ.</p>
-        </div>
-      </div>
-      <div class="process-step reveal stagger-3">
-        <div class="step-number">03</div>
-        <div class="step-body">
-          <h3 class="step-title">Démonstration</h3>
-          <p class="step-desc">Vous voyez le résultat avant de décider. Si ça vous plaît, on continue. Si non, vous ne payez rien.</p>
-        </div>
-      </div>
-      <div class="process-step reveal stagger-4">
-        <div class="step-number">04</div>
-        <div class="step-body">
-          <h3 class="step-title">Livraison</h3>
-          <p class="step-desc">En ligne en 7 jours chrono. Domaine, hébergement, tout est géré. Vous n'avez rien à faire.</p>
-        </div>
-      </div>
+      <details class="process-step reveal stagger-1">
+        <summary>
+          <div class="step-number">01</div>
+          <div class="step-body">
+            <h3 class="step-title">Je repère votre commerce</h3>
+          </div>
+        </summary>
+        <p class="step-desc">Je m'appuie sur les informations déjà visibles en ligne : activité, photos publiques, horaires, localisation, ambiance et points forts.</p>
+      </details>
+      <details class="process-step reveal stagger-2">
+        <summary>
+          <div class="step-number">02</div>
+          <div class="step-body">
+            <h3 class="step-title">Je prépare une première ébauche</h3>
+          </div>
+        </summary>
+        <p class="step-desc">Avant de parler de devis ou d'engagement, je construis une première version concrète de votre site pour vous permettre de vous projeter.</p>
+      </details>
+      <details class="process-step reveal stagger-3">
+        <summary>
+          <div class="step-number">03</div>
+          <div class="step-body">
+            <h3 class="step-title">Vous découvrez le résultat</h3>
+          </div>
+        </summary>
+        <p class="step-desc">Vous voyez directement ce que votre commerce pourrait donner en ligne. L'objectif n'est pas de vous vendre une idée, mais de vous montrer une base réelle.</p>
+      </details>
+      <details class="process-step reveal stagger-4">
+        <summary>
+          <div class="step-number">04</div>
+          <div class="step-body">
+            <h3 class="step-title">On améliore ensemble</h3>
+          </div>
+        </summary>
+        <p class="step-desc">Si la direction vous plaît, on ajuste les textes, les photos, les sections et les détails pour obtenir un site professionnel, fidèle à votre commerce.</p>
+      </details>
+      <details class="process-step reveal stagger-5">
+        <summary>
+          <div class="step-number">05</div>
+          <div class="step-body">
+            <h3 class="step-title">Mise en ligne et suivi</h3>
+          </div>
+        </summary>
+        <p class="step-desc">Une fois validé, le site peut être mis en ligne et suivi grâce à une offre mensuelle simple incluant l'hébergement.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -2382,41 +2548,61 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Est-ce que je peux modifier mon site moi-même ?</span>
+          <span>Pourquoi le prix de départ est à 490 € ?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>Oui. Avec l'offre Premium, vous avez une formation d'1h pour apprendre à modifier les textes, photos et horaires vous-même. Pour les autres offres, chaque modification est traitée sous 24h sur simple message WhatsApp.</p>
+          <p>L'offre Landing est pensée comme une offre de lancement simple et accessible pour les commerces locaux. Elle permet d'obtenir une page complète, professionnelle et mobile, sans partir sur un gros projet web. Les besoins plus avancés sont couverts par les offres Site Vitrine et Application.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Que se passe-t-il après les 7 jours ?</span>
+          <span>L'hébergement est-il inclus ?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>Votre site est en ligne et vous en êtes propriétaire. L'hébergement et le domaine sont inclus pour 1 an. Ensuite, vous choisissez librement de continuer avec une formule de maintenance mensuelle ou de gérer ça vous-même.</p>
+          <p>L'hébergement est inclus dans les offres de suivi mensuel. Cela permet de garder le site en ligne, suivi techniquement et modifiable selon la formule choisie. Le nom de domaine, les adresses email professionnelles et les abonnements externes éventuels peuvent être accompagnés mais restent facturés séparément si nécessaire.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Comment vous faites pour livrer en 7 jours ?</span>
+          <span>Est-ce que je peux modifier mon site après la mise en ligne ?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>J'arrive avec votre site déjà construit avant même qu'on se parle. Je prépare une version basée sur votre activité, vos photos publiques et votre univers. Vous validez, on affine en 1 ou 2 échanges, et c'est en ligne.</p>
+          <p>Oui. Avec les offres de suivi mensuel, vous pouvez demander des modifications simples selon la formule choisie. L'offre Confort inclut 1 à 2 modifications simples par mois, et l'offre Plus jusqu'à 4 modifications simples par mois.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Et si le résultat ne me convient pas ?</span>
+          <span>Qu'est-ce qu'une modification simple ?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>Vous voyez le site avant de payer quoi que ce soit. Si ça ne vous correspond pas du tout, vous ne payez rien. Zéro risque. C'est le principe de la démonstration avant engagement.</p>
+          <p>Une modification simple correspond à un changement de texte, d'image, d'horaire, de lien, de bouton ou à l'ajout d'un petit bloc de contenu. Une nouvelle page complète, une nouvelle fonctionnalité, une refonte graphique ou une intégration externe fait l'objet d'un devis séparé.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Est-ce vraiment livré en 7 jours ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>La livraison en 7 jours concerne l'offre Landing, une fois les contenus validés. Pour un site vitrine multi-pages ou une application, le délai dépend du nombre de pages, des contenus et des fonctionnalités prévues.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Est-ce que je dois m'engager avant de voir le site ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Non. L'approche Gabyn Studio consiste justement à préparer une première ébauche concrète pour vous permettre de juger sur du réel. Si la base vous plaît, on l'améliore ensemble.</p>
         </div>
       </div>
 
@@ -2436,7 +2622,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>Tous les sites incluent le SEO technique de base (balises, vitesse, mobile-first). L'offre Pro ajoute le SEO avancé et l'optimisation Google My Business — ce qui est essentiel pour apparaître dans les recherches locales de votre ville.</p>
+          <p>Chaque offre inclut les bases du SEO local pour que vos clients trouvent rapidement les bonnes informations. L'objectif n'est pas de faire compliqué. L'objectif est que vos clients comprennent vite qui vous êtes, ce que vous proposez et comment vous contacter.</p>
         </div>
       </div>
 
@@ -2490,23 +2676,33 @@
         <div class="commission-example">
           <div class="comm-example-title">Exemple concret</div>
           <div class="comm-row">
-            <span class="comm-row-label">Site vitrine Starter</span>
+            <span class="comm-row-label">Landing complète</span>
             <span class="comm-row-val">490 €</span>
           </div>
           <div class="comm-row">
-            <span class="comm-row-label">Ta commission</span>
+            <span class="comm-row-label">Commission apporteur</span>
             <span class="comm-row-val green">+ 49 €</span>
           </div>
           <div class="commission-divider"></div>
           <div class="comm-row">
-            <span class="comm-row-label">Site Pro complet</span>
-            <span class="comm-row-val">990 €</span>
+            <span class="comm-row-label">Site Vitrine</span>
+            <span class="comm-row-val">890 €</span>
           </div>
           <div class="comm-row">
-            <span class="comm-row-label">Ta commission</span>
-            <span class="comm-row-val green">+ 99 €</span>
+            <span class="comm-row-label">Commission apporteur</span>
+            <span class="comm-row-val green">+ 89 €</span>
+          </div>
+          <div class="commission-divider"></div>
+          <div class="comm-row">
+            <span class="comm-row-label">Application</span>
+            <span class="comm-row-val">à partir de 1 490 €</span>
+          </div>
+          <div class="comm-row">
+            <span class="comm-row-label">Commission apporteur</span>
+            <span class="comm-row-val green">à partir de + 149 €</span>
           </div>
         </div>
+        <p style="font-size:12px; color:var(--muted); line-height:1.6; margin:18px 0 0;">La commission est calculée uniquement si le projet est signé et payé.</p>
         <a href="#contact" class="btn-primary">Devenir apporteur →</a>
       </div>
 
@@ -2569,20 +2765,21 @@
               <label for="type">Type de projet</label>
               <select id="type" name="type" required>
                 <option value="" disabled selected>Choisir…</option>
-                <option value="vitrine">Site vitrine</option>
-                <option value="refonte">Refonte</option>
-                <option value="pwa">PWA</option>
-                <option value="autre">Autre</option>
+                <option value="landing">Landing page complète</option>
+                <option value="site-vitrine">Site vitrine multi-pages</option>
+                <option value="application">Application / mini-outil web</option>
+                <option value="refonte">Refonte ou amélioration d'un site existant</option>
+                <option value="proposition">Je veux d'abord voir une proposition</option>
               </select>
             </div>
             <div class="form-group">
               <label for="budget">Budget estimé</label>
               <select id="budget" name="budget" required>
                 <option value="" disabled selected>Choisir…</option>
-                <option value="starter">490 – 890€</option>
-                <option value="pro">890 – 1 490€</option>
-                <option value="premium">+1 490€</option>
-                <option value="discuss">À discuter</option>
+                <option value="landing">Landing — 490 €</option>
+                <option value="site-vitrine">Site Vitrine — 890 €</option>
+                <option value="application">Application — à partir de 1 490 €</option>
+                <option value="unknown">Je ne sais pas encore</option>
               </select>
             </div>
             <div class="form-group">
