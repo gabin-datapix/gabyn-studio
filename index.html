@@ -75,22 +75,20 @@
      CSS CUSTOM PROPERTIES
   ═══════════════════════════════════════ */
   :root {
-    --bg: #0D0C0A;
-    --bg-soft: #0D0C0A;
-    --surface: #161411;
-    --surface2: #1F1C18;
-    --accent: #BDB09E;
-    --cta: #EDE8DF;
-    --blue: #5B72FF;
-    --warm: #C4963A;
-    --text: #EDE8DF;
-    --muted: #7C756A;
-    --border: rgba(255,248,235,0.07);
-    /* neutral variants — no more blue/green panels */
-    --blue-panel: #151412;
-    --blue-panel-2: #1A1814;
-    --green-panel: #141513;
-    --green-panel-2: #181916;
+    --bg: #080808;
+    --surface: #101010;
+    --surface2: #181818;
+    --accent: #D8D8D8;
+    --cta: #FFFFFF;
+    --blue: #4F6BFF;
+    --text: #F0F0F0;
+    --muted: #808080;
+    --border: rgba(255,255,255,0.08);
+    /* section-level color panels — deep, near-black */
+    --blue-panel: #0A1020;
+    --blue-panel-2: #0F172E;
+    --green-panel: #070F0C;
+    --green-panel-2: #0C1610;
     --font-display: 'Outfit', sans-serif;
     --font-body: 'DM Sans', sans-serif;
     --ease-out: cubic-bezier(.16, 1, .3, 1);
@@ -145,7 +143,7 @@
   }
   body.cursor-hover #cursor-ring {
     width: 64px; height: 64px;
-    border-color: rgba(196,150,58,0.5);
+    border-color: rgba(79,107,255,0.5);
   }
   body.cursor-hover #cursor-dot { opacity: 0; }
   body.cursor-ready #cursor-dot,
@@ -770,7 +768,7 @@
     gap: 8px;
     font-size: 11px;
     font-weight: 400;
-    color: var(--warm);
+    color: var(--blue);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -778,7 +776,7 @@
   .section-tag::before {
     content: '';
     width: 16px; height: 1px;
-    background: var(--warm);
+    background: var(--blue);
   }
   .section-title {
     font-family: var(--font-display);
@@ -812,6 +810,7 @@
   #realisations {
     background: var(--bg);
   }
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1140,9 +1139,9 @@
      OFFRES / PRICING
   ═══════════════════════════════════════ */
   #offres {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(79,107,255,0.15) 0%, transparent 70%),
+      var(--blue-panel);
   }
   .pricing-grid {
     display: grid;
@@ -1155,7 +1154,7 @@
     margin-bottom: 48px;
   }
   .pricing-card {
-    background: var(--bg);
+    background: var(--blue-panel-2);
     padding: 40px 32px;
     position: relative;
     display: flex;
@@ -1163,9 +1162,9 @@
     transition: transform 0.3s var(--ease-out);
   }
   .pricing-card.popular {
-    background: var(--surface);
+    background: linear-gradient(160deg, rgba(79,107,255,0.14) 0%, var(--blue-panel-2) 60%);
     transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 0 0 1px var(--blue), 0 30px 60px rgba(91,114,255,0.12);
+    box-shadow: 0 0 0 1px rgba(79,107,255,0.5), 0 30px 80px rgba(79,107,255,0.18);
     border-radius: 4px;
     z-index: 2;
   }
@@ -1315,7 +1314,7 @@
     gap: 16px;
   }
   .maintenance-card {
-    background: var(--surface);
+    background: var(--blue-panel-2);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 24px;
@@ -1326,10 +1325,10 @@
     transform: translateY(-2px);
   }
   .maintenance-card:nth-child(2) {
-    background: var(--surface2);
+    background: linear-gradient(160deg, rgba(79,107,255,0.1) 0%, var(--blue-panel-2) 70%);
   }
   .maintenance-card:nth-child(3) {
-    background: var(--surface2);
+    background: var(--blue-panel-2);
   }
   .maint-price {
     font-family: var(--font-display);
@@ -1426,6 +1425,7 @@
   #pourquoi {
     background: var(--bg);
   }
+
   .avantages-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1442,10 +1442,10 @@
   }
   .avantage-card:hover { background: var(--surface2); }
   .avantage-card:nth-child(2) {
-    background: var(--surface2);
+    background: linear-gradient(160deg, rgba(79,107,255,0.08) 0%, var(--surface) 50%);
   }
   .avantage-card:nth-child(4) {
-    background: var(--surface2);
+    background: linear-gradient(160deg, rgba(34,197,94,0.07) 0%, var(--surface) 50%);
   }
   .avantage-icon {
     font-size: 28px;
@@ -1489,10 +1489,10 @@
   }
   .process-step:nth-child(2),
   .process-step:nth-child(4) {
-    background: var(--surface2);
+    background: linear-gradient(to right, rgba(79,107,255,0.06) 0%, var(--surface) 60%);
   }
-  .process-step:nth-child(5) {
-    background: var(--surface2);
+  .process-step:nth-child(3) {
+    background: linear-gradient(to right, rgba(34,197,94,0.05) 0%, var(--surface) 60%);
   }
   .process-step summary {
     list-style: none;
@@ -1575,9 +1575,9 @@
      À PROPOS
   ═══════════════════════════════════════ */
   #apropos {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 70% 80% at 90% 40%, rgba(79,107,255,0.1) 0%, transparent 65%),
+      var(--blue-panel);
   }
   .apropos-grid {
     display: grid;
@@ -1693,6 +1693,7 @@
   #faq {
     background: var(--bg);
   }
+
   .faq-list {
     display: flex;
     flex-direction: column;
@@ -1718,7 +1719,7 @@
     transition: background 0.25s, color 0.25s;
   }
   .faq-item:nth-child(2n) .faq-q {
-    background: var(--surface2);
+    background: var(--bg);
   }
   .faq-item:nth-child(2n) .faq-a {
     background: var(--bg);
@@ -1797,8 +1798,10 @@
      APPORTEUR D'AFFAIRES
   ═══════════════════════════════════════ */
   #apporteur {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 80% 60% at 100% 50%, rgba(34,197,94,0.08) 0%, transparent 65%),
+      var(--green-panel);
+    border-top: 1px solid rgba(34,197,94,0.1);
   }
   .apporteur-grid {
     display: grid;
@@ -1882,8 +1885,8 @@
     line-height: 1.6;
   }
   .apporteur-commission {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: var(--green-panel-2);
+    border: 1px solid rgba(34,197,94,0.15);
     border-radius: 16px;
     padding: 40px;
     display: flex;
@@ -1975,8 +1978,9 @@
   }
 
   #contact {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 60% 70% at 5% 80%, rgba(79,107,255,0.08) 0%, transparent 60%),
+      var(--blue-panel);
   }
   .contact-grid {
     display: grid;
@@ -2035,8 +2039,8 @@
     letter-spacing: 0.06em;
   }
   .contact-form-wrapper {
-    background: var(--bg);
-    border: 1px solid var(--border);
+    background: var(--blue-panel-2);
+    border: 1px solid rgba(79,107,255,0.15);
     border-radius: 4px;
     padding: 44px 40px;
   }
@@ -2155,7 +2159,7 @@
      FOOTER
   ═══════════════════════════════════════ */
   footer {
-    background: var(--bg);
+    background: var(--surface);
     border-top: 1px solid var(--border);
     padding: 48px 40px 24px;
   }
